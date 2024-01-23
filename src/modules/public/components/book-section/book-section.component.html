@@ -1,0 +1,32 @@
+<!-- book-section.component.html -->
+<section class="h-full w-full py-8">
+  <div class="mx-auto w-[90%]">
+    <h1 class="text-[2rem] md:text-[2.5rem] font-semibold">{{ title }}</h1>
+    <span class="flex justify-between md:items-center w-full py-3">
+      <p class="text-[1rem] md:text-[1.5rem] pr-3">{{ description }}</p>
+      <a href="/{{endpoint}}" class="text-teal-600 font-bold text-[1rem] md:text-[1.5rem]">View More</a>
+    </span>
+  </div>
+
+  <div class="flex gap-1 md:gap-2 flex-wrap md:flex-nowrap md:overflow-auto justify-between items-center mx-auto w-[90%] h-full">
+    <div *ngFor="let book of books" class="w-[48%] md:w-[32%] lg:w-[23%] mb-2 md:mb-0 shadow-lg relative flex flex-col items-center justify-center h-[50vh] md:h-[80vh]">
+      <div class="h-1/2 md:top-[15%] top-[10%] w-[70%] shadow z-10 absolute rounded-lg">
+        <img [src]="book.image" class="object-fill w-full h-full object-center rounded-lg" alt="books img" [height]="book.height" [width]="book.width">
+      </div>
+      <div [style.background]="book.background" class=" h-[40%] w-full"></div>
+      <div class="bg-[#CCEDF2] h-[60%] w-full flex flex-col justify-end">
+        <div class="py-4 md:px-6 px-3 flex-shrink-1 min-h-[40%] overflow-hidden">
+          <h2 class="font-bold text-[0.8rem] md:text-[1.8rem]">{{ book.title }}</h2>
+          <p class="text-[0.8rem] md:text-[1.3rem] font-semibold">{{ book.author }}</p>
+          <span class="my-3">
+            <i *ngFor="let star of [1, 2, 3, 4, 5]" class="fa-star text-amber-500" [ngClass]="{'fa-solid': star <= book.rating, 'fa-regular': star > book.rating }"></i>
+          </span>
+          <div class="flex justify-between">
+            <small class="font-normal  text-[0.8rem]  md:text-[1.2rem]">{{ book.rating }}/5</small>
+            <i class="fa-regular fa-bookmark text-xl"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,75 @@
+<section class="flex min-h-svh justify-between">
+  <div class="md:w-1/2 md:flex justify-center items-center hidden min-h-full relative rounded-tr-3xl ">
+    <!-- Background Image with Overlay -->
+    <div class="rounded-tr-3xl  absolute inset-0 " style="background-color: rgba(0, 0, 0, 0.6); background-image: url('./assets/logimg.jpg'); background-position: center; background-size: cover;"></div>
+
+    <!-- Content on top of the background image -->
+    <div class="relative z-10">
+      <h1 class="text-[#4291B0] font-bold text-4xl">Create An Account!</h1>
+    </div>
+  </div>
+  <div class="md:w-1/2 w-full flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+
+    <div class="md:ml-8 w-8 h-8 md:w-12 md:h-12 flex items-center justify-center rounded-full border-2 border-[#4291B0]">
+      <a href="/">
+        <i class="fa-solid fa-arrow-left text-lg md:text-2xl text-[#4291B0]"></i>
+      </a>
+    </div>
+
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+      <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign up with Email</h2>
+    </div>
+
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <!-- <form class="space-y-6" [formGroup]="registrationForm" (ngSubmit)="submitRegistration()"> -->
+        <form class="space-y-6">
+        <div>
+          <label for="fullName" class="block text-sm font-medium leading-6 text-gray-900">Full Name</label>
+          <div class="mt-2">
+            <input id="fullname" name="fullname" type="text"  required class="px-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4291B0] sm:text-sm sm:leading-6">
+          </div>
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+          <div class="mt-2">
+            <input id="email" name="email" type="email" autocomplete="email" required class="px-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4291B0] sm:text-sm sm:leading-6">
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+          </div>
+
+          <div class="mt-2">
+            <div class="relative">
+              <!-- <input id="password" name="password" [type]="passwordFieldType" autocomplete="current-password" required -->
+              <input id="password" name="password" autocomplete="current-password" required
+                     class="px-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4291B0] sm:text-sm sm:leading-6">
+              <!-- Eye icon for toggling password visibility -->
+              <!-- <div class="text-[#4291B0] absolute inset-y-0 right-0 p-2 text-sm flex items-center cursor-pointer" (click)="togglePasswordVisibility()"> -->
+              <div class="text-[#4291B0] absolute inset-y-0 right-0 p-2 text-sm flex items-center cursor-pointer">
+
+                <!-- <i class="far" [ngClass]="{'fa-eye': passwordVisible, 'fa-eye-slash': !passwordVisible}"></i> -->
+                <i class="far fa-eye"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+          <button type="submit" class="flex w-full justify-center rounded-md bg-[#4291B0] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#4291B0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4291B0]">Sign up</button>
+        </div>
+      </form>
+
+      <p class="mt-10 text-center text-sm text-gray-500">
+        Already have an account?
+        <a href="/login" class="font-semibold leading-6 text-[#4291B0] hover:text-[#4291B0]">Login</a>
+      </p>
+    </div>
+  </div>
+
+</section>
+

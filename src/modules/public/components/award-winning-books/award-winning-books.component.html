@@ -1,0 +1,19 @@
+<main>
+  <div class="mx-auto w-[95%] py-4">
+    <div class="absolute top-4 md:ml-8 w-8 h-8 md:w-12 md:h-12 flex items-center justify-center">
+      <a href="/">
+        <i class="fa-solid fa-arrow-left text-lg md:text-2xl text-[#4291B0]"></i>
+      </a>
+    </div>
+  </div>
+
+  <app-book-details  title="Award Winning Books" description="These works from different authors has been recognized by prestigious literary awards." [books]="awardWinningBooks">
+  </app-book-details>
+
+  <app-book-details [books]="bestSellingBooks">
+  </app-book-details>
+
+  <app-book-details [books]="teensChildrenBooks">
+  </app-book-details>
+</main>
+

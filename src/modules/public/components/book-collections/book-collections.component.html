@@ -1,0 +1,98 @@
+
+<main class="py-14">
+  <h1 class="font-medium pb-4 px-2 text-[1.5rem] md:text-[2.5rem] text-center">
+    Browse Our Collections of Books
+  </h1>
+  <div class="border-y-2 border-y-gray-400">
+    <div class="mx-auto w-[90%] ">
+      <ul class="md:flex gap-1">
+
+        <li class="relative parent">
+          <a href="#" class="flex gap-1 p-3 items-center hover:bg-gray-50">
+            <span class="font-semibold">Overview</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current pt-1" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+          </a>
+          <ul class="child transition duration-300 md:absolute top-full left-0 md:w-48 bg-white md:shadow-lg md:rounded-b z-10">
+            <li>
+              <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
+                EBooks
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
+                Podcast
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
+                Magazines
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
+                Audio Books
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="relative parent">
+          <a href="#" class="flex gap-1 p-3 items-center hover:bg-gray-50">
+            <span class="font-semibold">Categories</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current pt-1" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+          </a>
+          <ul class="child transition duration-300 md:absolute top-full left-0 md:w-48 bg-white md:shadow-lg md:rounded-b z-10">
+            <li>
+              <a href="/best-selling-books" class="flex px-4 py-3 hover:bg-gray-50">
+                Best Selling Books
+              </a>
+            </li>
+            <li>
+              <a href="/award-winning-books" class="flex px-4 py-3 hover:bg-gray-50">
+                Award Winning Books
+              </a>
+            </li>
+            <li>
+              <a href="/teens-children-category" class="flex px-4 py-3 hover:bg-gray-50">
+                Teen/Children Books
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="relative parent">
+          <a href="#" class="flex gap-1 p-3 items-center hover:bg-gray-50">
+            <span class="font-semibold">BestSellers</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current pt-1" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+          </a>
+          <ul class="child transition duration-300 md:absolute top-full left-0 md:w-48 bg-white md:shadow-lg md:rounded-b z-10">
+            <li>
+              <a href="/best-selling-books" class="flex px-4 py-3 hover:bg-gray-50">
+                Best Selling Books
+              </a>
+            </li>
+            <li>
+              <a href="/award-winning-books" class="flex px-4 py-3 hover:bg-gray-50">
+                Award Winning Books
+              </a>
+            </li>
+            <li>
+              <a href="/teens-children-category" class="flex px-4 py-3 hover:bg-gray-50">
+                Teen/Children Books
+              </a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <app-book-section endpoint="best-selling-books" title="Best Selling Books" description="Top rated best selling books from different authors" [books]="bestSellingBooks">
+  </app-book-section>
+
+  <app-book-section endpoint="award-winning-books" title="Award Winning Books" description="These works from different authors has been recognized by prestigious literary awards." [books]="awardWinningBooks">
+  </app-book-section>
+
+  <app-book-section endpoint="teens-children-category" title="Teens/Children Category" description="Exciting Teens/Children Fantasy Novels." [books]="teensChildrenBooks">
+  </app-book-section>
