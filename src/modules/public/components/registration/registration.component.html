@@ -20,20 +20,22 @@
       <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign up with Email</h2>
     </div>
 
+    {{ registrationForm.valid | json }}
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <!-- <form class="space-y-6" [formGroup]="registrationForm" (ngSubmit)="submitRegistration()"> -->
-        <form class="space-y-6">
+        <form class="space-y-6" [formGroup]="registrationForm" (ngSubmit)="submitRegistration()">
+        <!-- <form class="space-y-6"> -->
         <div>
           <label for="fullName" class="block text-sm font-medium leading-6 text-gray-900">Full Name</label>
           <div class="mt-2">
-            <input id="fullname" name="fullname" type="text"  required class="px-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4291B0] sm:text-sm sm:leading-6">
+            <input id="fullname" formControlName="fullname" type="text"  required class="px-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4291B0] sm:text-sm sm:leading-6">
           </div>
         </div>
 
         <div>
           <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
           <div class="mt-2">
-            <input id="email" name="email" type="email" autocomplete="email" required class="px-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4291B0] sm:text-sm sm:leading-6">
+            <input id="email" formControlName="email" type="email" autocomplete="email" required class="px-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4291B0] sm:text-sm sm:leading-6">
           </div>
         </div>
 
@@ -44,15 +46,15 @@
 
           <div class="mt-2">
             <div class="relative">
-              <!-- <input id="password" name="password" [type]="passwordFieldType" autocomplete="current-password" required -->
-              <input id="password" name="password" autocomplete="current-password" required
+              <!-- <input id="password" name="password" autocomplete="current-password" required -->
+              <input id="password" formControlName="password" [type]="passwordFieldType" autocomplete="current-password" required
                      class="px-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4291B0] sm:text-sm sm:leading-6">
               <!-- Eye icon for toggling password visibility -->
-              <!-- <div class="text-[#4291B0] absolute inset-y-0 right-0 p-2 text-sm flex items-center cursor-pointer" (click)="togglePasswordVisibility()"> -->
-              <div class="text-[#4291B0] absolute inset-y-0 right-0 p-2 text-sm flex items-center cursor-pointer">
+              <div class="text-[#4291B0] absolute inset-y-0 right-0 p-2 text-sm flex items-center cursor-pointer" (click)="togglePasswordVisibility()">
+              <!-- <div class="text-[#4291B0] absolute inset-y-0 right-0 p-2 text-sm flex items-center cursor-pointer"> -->
 
-                <!-- <i class="far" [ngClass]="{'fa-eye': passwordVisible, 'fa-eye-slash': !passwordVisible}"></i> -->
-                <i class="far fa-eye"></i>
+                <i class="far" [ngClass]="{'fa-eye': passwordVisible, 'fa-eye-slash': !passwordVisible}"></i>
+                <!-- <i class="far fa-eye"></i> -->
               </div>
             </div>
           </div>

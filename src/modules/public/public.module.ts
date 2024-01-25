@@ -14,12 +14,16 @@ import { BookSectionComponent } from './components/book-section/book-section.com
 
 import {RouterLink} from "@angular/router";
 import {NgIf, NgForOf, NgClass, NgOptimizedImage} from "@angular/common";
+import { HttpClientModule } from '@angular/common/http';
 import { BestSellingBooksComponent } from './components/best-selling-books/best-selling-books.component';
 import { AwardWinningBooksComponent } from './components/award-winning-books/award-winning-books.component';
 import { TeensChildrenCategoryComponent } from './components/teens-children-category/teens-children-category.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PricingComponent } from './components/pricing/pricing.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+
+import { ReactiveFormsModule } from '@angular/forms'; 
 
 
 @NgModule({
@@ -38,7 +42,8 @@ import { PricingComponent } from './components/pricing/pricing.component';
     TeensChildrenCategoryComponent,
     BookDetailsComponent,
     ContactComponent,
-    PricingComponent
+    PricingComponent,
+    NotFoundPageComponent
   ],
   imports: [
     CommonModule,
@@ -48,6 +53,8 @@ import { PricingComponent } from './components/pricing/pricing.component';
     NgOptimizedImage,
     NgForOf,
     NgClass,
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class PublicModule { }

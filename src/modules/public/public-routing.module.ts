@@ -9,6 +9,7 @@ import { AwardWinningBooksComponent } from './components/award-winning-books/awa
 import { TeensChildrenCategoryComponent } from './components/teens-children-category/teens-children-category.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PricingComponent } from './components/pricing/pricing.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 
 const routes: Routes = [
   {
@@ -46,7 +47,8 @@ const routes: Routes = [
       {
         path: 'pricing',
         component: PricingComponent,
-      }
+      },
+      { path: '**', component: NotFoundPageComponent },
     ]
   }
 ];
