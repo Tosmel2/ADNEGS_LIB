@@ -78,6 +78,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -89,7 +90,7 @@ export class RegistrationComponent implements OnInit {
 
   registrationForm: FormGroup;
 
-  constructor(private http: HttpClient, private fb: FormBuilder, private userService: UserService) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private userService: UserService, private router: Router) {
     this.registrationForm = this.fb.group({
       fullname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -138,6 +139,7 @@ export class RegistrationComponent implements OnInit {
       this.userService.registerUser(registrationData)
         .subscribe(response => {
           console.log('Registration successful!', response);
+          this.router.navigate(['/login']);
           // Optionally, you can redirect the user or perform other actions after successful registration
         }, error => {
           console.error('Registration failed!', error);
