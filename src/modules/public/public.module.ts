@@ -23,7 +23,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 
-import { ReactiveFormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { ErrorComponent } from './components/error/error.component';
+import { SuccessComponent } from './components/success/success.component'; 
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     BookDetailsComponent,
     ContactComponent,
     PricingComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    ErrorComponent,
+    SuccessComponent
   ],
   imports: [
     CommonModule,

@@ -26,6 +26,8 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required])
   });
 
+  errorMessage: string | undefined;
+
   constructor(private userService: UserService, private router: Router) {}
 
   onSubmit() {
@@ -46,6 +48,8 @@ export class LoginComponent {
         (error) => {
           // Handle login error here
           console.error('Login error', error);
+          // Assuming your API returns an error message, update errorMessage
+          this.errorMessage = error.error.message || 'Invalid username or password';
         }
       );
     }
