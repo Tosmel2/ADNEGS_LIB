@@ -43,7 +43,7 @@ export class LoginComponent {
           console.log('Login successful', response);
 
           // Redirect to the dashboard component
-          this.router.navigate(['/best-selling-books']);
+          this.router.navigate(['/user-dashboard']);
         },
         (error) => {
           // Handle login error here

@@ -12,25 +12,35 @@
             <span class="font-semibold">Overview</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current pt-1" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
           </a>
-          <ul class="child transition duration-300 md:absolute top-full left-0 md:w-48 bg-white md:shadow-lg md:rounded-b z-10">
+          <ul class="child transition duration-300 md:absolute top-full left-0 md:w-48 bg-white md:shadow-lg md:rounded-b z-20">
             <li>
               <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
-                EBooks
+                Fiction
               </a>
             </li>
             <li>
               <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
-                Podcast
+                Non_Fiction
               </a>
             </li>
             <li>
               <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
-                Magazines
+                Self_Help
               </a>
             </li>
             <li>
               <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
-                Audio Books
+                Business
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
+                Programming
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
+                Others
               </a>
             </li>
           </ul>
@@ -45,6 +55,11 @@
             <li>
               <a href="/best-selling-books" class="flex px-4 py-3 hover:bg-gray-50">
                 Best Selling Books
+              </a>
+            </li>
+            <li>
+              <a href="/programming" class="flex px-4 py-3 hover:bg-gray-50">
+                Programming
               </a>
             </li>
             <li>
@@ -89,6 +104,9 @@
   </div>
 
   <app-book-section endpoint="best-selling-books" title="Best Selling Books" description="Top rated best selling books from different authors" [books]="bestSellingBooks">
+  </app-book-section>
+
+  <app-book-section endpoint="programming" title="Programming Books" description="Top rated best selling programming books to transition to tech" [books]="programming">
   </app-book-section>
 
   <app-book-section endpoint="award-winning-books" title="Award Winning Books" description="These works from different authors has been recognized by prestigious literary awards." [books]="awardWinningBooks">

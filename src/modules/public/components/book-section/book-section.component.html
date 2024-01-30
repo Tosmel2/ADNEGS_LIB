@@ -1,10 +1,10 @@
 <!-- book-section.component.html -->
 <section class="h-full w-full py-8">
   <div class="mx-auto w-[90%]">
-    <h1 class="text-[2rem] md:text-[2.5rem] font-semibold">{{ title }}</h1>
+    <h1 class="text-[2rem] md:text-[2.3rem] font-semibold">{{ title }}</h1>
     <span class="flex justify-between md:items-center w-full py-3">
-      <p class="text-[1rem] md:text-[1.5rem] pr-3">{{ description }}</p>
-      <a href="/{{endpoint}}" class="text-teal-600 font-bold text-[1rem] md:text-[1.5rem]">View More</a>
+      <p class="text-[1rem] md:text-[1.4rem] pr-3">{{ description }}</p>
+      <a href="/{{endpoint}}" class="text-teal-600 font-bold text-[0.9rem] md:text-[1.2rem]">View More</a>
     </span>
   </div>
 
@@ -15,7 +15,7 @@
       </div>
       <div [style.background]="book.background" class=" h-[40%] w-full"></div>
       <div class="bg-[#CCEDF2] h-[60%] w-full flex flex-col justify-end">
-        <div class="py-4 md:px-4 px-2 flex-shrink-1 min-h-[40%] overflow-hidden">
+        <div class="py-4 md:px-4 px-2 flex-shrink-1 min-h-[40%] overflow-hidden text-wraps">
           <h2 class="font-bold text-[0.7rem] md:text-[1.5rem]">{{ book.title }}</h2>
           <p class="text-[0.7rem] md:text-[1.2rem] font-medium">{{ book.author }}</p>
           <span class="my-3">
@@ -23,7 +23,7 @@
           </span>
           <div class="flex justify-between">
             <small class="font-normal  text-[0.7rem]  md:text-[1.1rem]">{{ book.rating }}/5</small>
-            <i class="fa-regular fa-bookmark text-xl"></i>
+            <i class="fa-regular fa-bookmark text-lg md:text-xl"></i>
           </div>
         </div>
       </div>

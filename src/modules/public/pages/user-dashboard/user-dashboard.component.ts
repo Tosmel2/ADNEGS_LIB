@@ -1,11 +1,54 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
-  selector: 'app-book-collections',
-  templateUrl: './book-collections.component.html',
-  styleUrls: ['./book-collections.component.css']
+  selector: 'app-user-dashboard',
+  templateUrl: './user-dashboard.component.html',
+  styleUrls: ['./user-dashboard.component.css']
 })
-export class BookCollectionsComponent {
+export class UserDashboardComponent {
+  menuOpen = false;
+  modalOpen = false;
+
+  fullname: string = "";
+  email: string = "";
+
+  constructor(private router: Router, private userService: UserService) {
+    // Assuming you have a method in your user service to get user details
+    const userData = this.userService.fetchUserData("theid").subscribe({
+      next: (res:any) => {
+        console.log(res);
+      },
+      error: (error:any) => {
+        console.log(error);
+      }
+    });
+
+    // if (userData) {
+    //   this.fullname = userData.fullname;
+    //   this.email = userData.email;
+    // }
+  }
+
+  openModal() {
+    this.modalOpen = true;
+  }
+
+  // constructor(private router: Router) {}
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu(): void {
+    this.menuOpen = false;
+  }
+
+  navigate(route: string): void {
+    this.router.navigate([route]);
+  }
+
   bestSellingBooks = [
     { title: 'Single with a Difference', author: 'Faith Oyedepo', rating: 5, image: './assets/singleDiff.jpg', height: 285, width: 177, background: '#D9D9D9' },
     { title: 'Single Ready and waiting', author: 'Tanika Chambers', rating: 5, image: './assets/sr.jpg', height: 285, width: 177, background: '#FFF6D7' },
@@ -29,10 +72,5 @@ export class BookCollectionsComponent {
     { title: 'The Beauty', author: 'Gabrielle Suza', rating: 5, image: './assets/beauty-gabriel.jpg', height: 285, width: 177, background: '#FFF6D7' },
     // Add more books as needed
   ];
-  programming = [
-  { title: 'Java for Beginner', author: 'Mustopha Abdulkareem', rating: 5, image: './assets/java-beginner.jpg', height: 285, width: 177, background: '#D9D9D9' },
-    { title: 'Angular JS for Beginner', author: 'Tosin Adewale', rating: 5, image: './assets/angular-beginner.jpg', height: 285, width: 177, background: '#FFF6D7' },
-    { title: 'JavaScript for Beginner', author: 'Mustopha Abdulkareem', rating: 5, image: './assets/js-beginner.jpg', height: 285, width: 177, background: '#F3D6D6' },
-    { title: 'TypeScript for Begineer', author: 'Tosin Adewale', rating: 5, image: './assets/typescript-beginner.png', height: 285, width: 177, background: '#FFF6D7' },
-  ];
+
 }
