@@ -29,6 +29,8 @@ import { SuccessComponent } from './components/success/success.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
 import { ProgrammingComponent } from './pages/programming/programming.component'; 
 import { SharedModule } from '../shared/shared.module';
+import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
+import { RegistrationConfirmationComponent } from './pages/registration-confirmation/registration-confirmation.component';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { SharedModule } from '../shared/shared.module';
     ErrorComponent,
     SuccessComponent,
     UserDashboardComponent,
-    ProgrammingComponent
+    ProgrammingComponent,
+    VerifyEmailComponent,
+    RegistrationConfirmationComponent
   ],
   imports: [
     CommonModule,

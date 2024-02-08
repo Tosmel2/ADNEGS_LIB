@@ -36,5 +36,19 @@ export class UserService {
     return this.http.get(`${this.baseUrl}/users/${userId}`)
   }
 
+  verifyEmail(token: string, accessToken:string): Observable<any> {
+    const headers = {
+      Authorization: `Bearer ${accessToken}`,
+    };
+    return this.http.get(`${this.baseUrl}/auth/verify?token=${token}`, { headers, responseType: 'text' });
+  }
+
+  resendEmail(accessToken:string): Observable<any> {
+    const headers = {
+      Authorization: `Bearer ${accessToken}`,
+    };
+    return this.http.get(`${this.baseUrl}/auth/resend-verification`, { headers, responseType: 'text' });
+  }
+
   
 }

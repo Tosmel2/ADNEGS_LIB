@@ -12,6 +12,8 @@ import { PricingComponent } from './pages/pricing/pricing.component';
 import { ProgrammingComponent } from './pages/programming/programming.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
+import { RegistrationConfirmationComponent } from './pages/registration-confirmation/registration-confirmation.component';
 
 
 const routes: Routes = [
@@ -54,6 +56,14 @@ const routes: Routes = [
       {
         path: 'pricing',
         component: PricingComponent,
+      },
+      {
+        path: 'auth/verify',
+        component: VerifyEmailComponent,
+      },
+      {
+        path: 'registration-success',
+        component: RegistrationConfirmationComponent,
       },
       {
         path: 'user-dashboard',

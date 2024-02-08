@@ -1,14 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.component.html',
-//   styleUrls: ['./login.component.css']
-// })
-// export class LoginComponent {
-
-// }
-
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -50,6 +39,10 @@ export class LoginComponent {
           console.error('Login error', error);
           // Assuming your API returns an error message, update errorMessage
           this.errorMessage = error.error.message || 'Invalid username or password';
+
+          setTimeout(() => {
+            this.errorMessage = undefined;
+          }, 3000);
         }
       );
     }

@@ -68,17 +68,22 @@ export class RegistrationComponent implements OnInit {
           console.log('Registration successful!', response);
           this.successMessage = 'Registration successful';
 
+          localStorage.setItem('accessToken', response.accessToken);
+
            // Display success message for 3 seconds
         setTimeout(() => {
           this.successMessage = undefined;
-          this.router.navigate(['/login']);
+          this.router.navigate(['/auth/verify']);
         }, 3000);
 
-          // this.router.navigate(['/login']);
-          // Optionally, you can redirect the user or perform other actions after successful registration
+
         }, error => {
           console.error('Registration failed!', error);
           this.errorMessage = error.error.message || 'Invalid: Password should contain atleast one special character, uppercase, lowercase letters and number';
+
+          setTimeout(() => {
+            this.errorMessage = undefined;
+          }, 3000);
         });
     } else {
       // If the form is not valid, alert the user to fill in all required fields
